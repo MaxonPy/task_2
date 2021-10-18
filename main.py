@@ -13,6 +13,8 @@ def Root():
 @app.get("/api/products") # список товаров
 def watch_all_products():
     global m
+    if not m:
+        return "Товары отсутствуют"
     return m
 
 @app.get("/api/products/{id}") # информация о товаре по id
